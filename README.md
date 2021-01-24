@@ -1,62 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel React
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+First project including react and laravel
 
-## About Laravel
+## install & Setup the environment
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+to run laravel we'll need to have `php` and `composer`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. install `php`
+    1. go to [php.net > downloads section](https://www.php.net/downloads)
+    1. click [Windows downloads](https://windows.php.net/download#php-8.0)
+       NB. make sure to download php >= 7.3.x (we recommend v8.0)
+    1. download the Zip file
+    1. extract this file to any path you prefer
+       NB. we recommend to extract this file to `C:\Program Files\PHP`
+       ![php folder](https://github.com/YoussefElHaddady/edictionary/blob/main/captures/php-folder.PNG)
+    1. add this folder to your envirenment path variable
+    1. check the installation
+       in your cmd :
+        ```console
+        php -v
+        ```
+        if you got the version of php so congrats
+1. install `composer`
+    1. go to [composer web site](https://getcomposer.org/)
+    1. click `Download`
+    1. in `Windows installer` section click [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
+    1. execute the `.exe` file and follow the steps
+    1. browse to your user folder and search for `AppData\Roaming\Composer\vendor\bin` copy that path and add it to your envirenment path variable
+    1. check the installation
+       in your cmd:
+        ```console
+         composer -V
+        ```
+        if you got the version of composer so congrats
+1. install `Laravel`
+    - go to laravel web site, follow the steps in the [The Laravel Installer](https://laravel.com/docs/8.x#the-laravel-installer) section
+      or simply
+    - run the following command in your cmd
+    ```console
+    composer global require laravel/installer
+    ```
+1. Create project
+   run the following command in your cmd
+    ```console
+    laravel new your-app-name
+    ```
+1. run the project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    1. run the following command in your cmd
+        ```console
+        cd your-app-name
+        php artisan serve
+        ```
+    1. in your browser go to `localhost:8000`
 
-## Learning Laravel
+1. include ReactJS
+    1. installing React UI scaffolding
+        ```console
+        composer require laravel/ui
+        ```
+    1. generate basic scaffolding
+        ```console
+        php artisan ui react
+        ```
+    1. ```console
+       npm install
+       ```
+    1. ```console
+       npm run watch
+       ```
+    1. a ReactJS component will be created under `resources/js/components/Examples.js`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## working up on the project
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. cleaning up the project
+   remove all not necessary codes
 
-## Laravel Sponsors
+    1. change `resources/views/welcome.blade.php` file content to :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+        ```html
+        <!DOCTYPE html>
+        <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+            <head>
+                <meta charset="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
 
-### Premium Partners
+                <title>Laravel - React</title>
+            </head>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+            <body>
+                <div id="root"></div>
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+                <script src="{{ asset('js/app.js') }}"></script>
+            </body>
+        </html>
+        ```
