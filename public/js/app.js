@@ -2191,12 +2191,16 @@ __webpack_require__.r(__webpack_exports__);
 var Articles = function Articles() {
   var articles = [{
     id: 1,
-    title: "C Courses",
+    title: "CSharp Courses",
     content: "bla bla bla"
   }, {
     id: 2,
     title: "Java Courses",
     content: "bla bla Java, bla bla Java"
+  }, {
+    id: 3,
+    title: "Android Courses",
+    content: "bla bla Android, bla bla Android"
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
